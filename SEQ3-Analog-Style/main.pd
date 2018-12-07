@@ -1,4 +1,4 @@
-#N canvas 507 53 1261 653 10;
+#N canvas 508 50 1261 653 10;
 #X declare -path seq3;
 #X obj 149 238 pack f f f;
 #X obj 149 263 route 1 2 3 4;
@@ -54,11 +54,11 @@
 #X obj 975 339 s screenLine4;
 #X obj 1015 42 r knob4;
 #X obj 209 74 r aux;
-#X obj 335 79 loadbang;
+#X obj 481 473 loadbang;
 #X obj 189 412 *~ 1;
 #X obj 495 118 * 2400;
 #X obj 1015 118 * 4000;
-#X obj 335 126 cg-metro 1;
+#X obj 481 522 cg-metro 1;
 #X obj 243 572 s midiInGate;
 #X obj 243 523 loadbang;
 #X msg 243 545 0;
@@ -68,11 +68,13 @@
 #X obj 517 85 r seq3-1-k1;
 #X obj 68 517 declare -path seq3;
 #X obj 149 115 cg-seq3 1 1;
-#X msg 335 102 120;
+#X msg 481 496 120;
 #X obj 269 365 simple;
 #X obj 206 336 simple;
 #X obj 157 318 simple;
 #X obj 149 382 simple;
+#X obj 481 569 cg-print-line5;
+#X obj 574 539 r seq3-1-actions;
 #X connect 0 0 1 0;
 #X connect 1 0 72 0;
 #X connect 1 1 71 0;
@@ -131,6 +133,9 @@
 #X connect 56 0 29 0;
 #X connect 56 0 38 0;
 #X connect 57 0 22 0;
+#X connect 58 0 73 0;
+#X connect 58 1 73 1;
+#X connect 58 2 73 2;
 #X connect 60 0 61 0;
 #X connect 61 0 59 0;
 #X connect 62 0 57 0;
@@ -144,3 +149,4 @@
 #X connect 70 0 55 0;
 #X connect 71 0 55 0;
 #X connect 72 0 55 0;
+#X connect 74 0 73 3;
